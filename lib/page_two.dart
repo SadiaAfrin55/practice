@@ -14,8 +14,7 @@ class PageTwo extends StatelessWidget {
         backgroundColor: Colors.grey.shade100,
         body: Container(
           child: SingleChildScrollView(
-            child: Stack(
-              alignment: Alignment.topCenter,
+            child: Column(
               children: [
                 Column(
                   children: [
@@ -156,7 +155,7 @@ class PageTwo extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 10),
-                      height: MediaQuery.of(context).size.height,
+                      height: MediaQuery.of(context).size.height*0.4,
                       child: ListView.builder(
                           itemCount: 2,
                           itemBuilder: (context,index){
@@ -166,12 +165,52 @@ class PageTwo extends StatelessWidget {
                     ),
                   ],
                 ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    height: MediaQuery.of(context).size.height*0.1,
-                    color: Colors.lime.shade900,
+                SizedBox(height: 15,),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 60,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width*0.4,
+                          height:44,
+                          decoration: BoxDecoration(
+                            color: Colors.red.shade900,
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('data',style: TextStyle(fontSize: 14,color: Colors.white),),
+                              SizedBox(width: 8,),
+                              Icon(Icons.monetization_on_outlined,color: Colors.white,)
+                            ],
+                          ),
+
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width*0.4,
+                          height:44,
+                          decoration: BoxDecoration(
+                              color: Colors.green.shade900,
+                              borderRadius: BorderRadius.circular(8)
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('data',style: TextStyle(fontSize: 14,color: Colors.white),),
+                              SizedBox(width: 8,),
+                              Icon(Icons.monetization_on_outlined,color: Colors.white,)
+                            ],
+                          ),
+
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
